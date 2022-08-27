@@ -44,7 +44,17 @@ public class ProductController extends HttpServlet {
 		 request.setAttribute("List", productInfoList);
 			request.getRequestDispatcher("/Product.jsp").forward(request, response);
 			response.getWriter().append("Served at: ").append(request.getContextPath());
+}
+	
+	/**
+	 * @see HttpServlet#doUpdate(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doUpdate(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println(123);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -57,8 +67,5 @@ public class ProductController extends HttpServlet {
 		doGet(request, response);
 
 	}
-	
-	
-	
 
 }

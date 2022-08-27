@@ -142,5 +142,41 @@ public class ProductService {
 		return list;
 
 	}
+	
+	public void updateProductInfo(ProductObj productObj) {
+
+		conn = this.getDb();
+		System.out.println(233);
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("update tbl_product set ");
+		sb.append("'" + productObj.getProductId() + "',");
+		sb.append("'" + productObj.getProductName() + "',");
+		sb.append(productObj.getPrice() + ",");
+		sb.append("'" + productObj.getImformation() + "',");
+		sb.append("'" + productObj.getModel() + "',");
+		sb.append("'" + productObj.getCategory() + "',");
+		sb.append("'" + productObj.getBrand() + "',");
+		sb.append("'" + productObj.getProducingArea() + "',");
+		sb.append(productObj.getStockpileNum() + ",");
+		sb.append("'" + productObj.getShowFlg() + "',");
+		sb.append("'" + productObj.getDelFlg() + "',");
+		sb.append("'" + timestamp + "',");
+		sb.append("'" + timestamp + "'");
+		sb.append(");");
+		System.out.println(sb.toString());
+
+		try {
+			stmt = conn.createStatement();
+			stmt.execute(sb.toString());
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		this.closeDb();
+	}
 }
 
