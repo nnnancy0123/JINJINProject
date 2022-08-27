@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>JIN JIN SHOP</title>
+	</head>
+	
+  <body style="background-color:#F5FFFA;">
+  			<legend>JINJIN SHOPPING</legend>
+  	<script>
+		function show(){
+		var date = new Date(); 
+		var now = "";
+		now = date.getFullYear()+"年"; 
+		now = now + (date.getMonth()+1)+"月"; 
+		now = now + date.getDate()+"日";
+		now = now + date.getHours()+"時";
+		now = now + date.getMinutes()+"分";
+		document.getElementById("nowDiv").innerHTML = now; 
+		setTimeout("show()",1000); }
+		</script>
+		<body onload="show()"> 
+		<div id="nowDiv"></div><hr />
+	<form action="/my-handling-form-page" method="post">
+		<ul><h4 ><label for = "name">Name:</label>
+			<input type = "text" id = "name" name = "user_name" placeholder="花子 佐藤">
+		<br></h4>
+  		<div class="form-row">
+    	<div class="form-group col-md-6">
+      		<h4><label for="inputEmail">Email: </label> <input type="email" class="form-control" id="inputEmail" placeholder="aaaaaa@gmail.com">
+      		</h4></div>
+    	 <div class="form-group col-md-6">
+        	<h4><label for="inputPassword">Password: </label>
+        	<input type="password" class="form-control" id="inputPassword" placeholder="Password"></h4></div>
+  		<div class="form-group">
+    		<h4><label for="Address">Address: </label>
+    		<input type="text" class="form-control" id="Address" placeholder="Street Address"></h4></div>
+  		<div class="form-row">
+   	    <div class="form-group col-md-6">
+        	<h4><label for="inputCity">City: </label>
+      		<input type="text" class="form-control" id="inputCity"></h4></div>
+    	<div class="form-group col-md-4">
+        	<h4><label for="inputState">State: </label>
+        	<select id="inputState" class="form-control">
+       	    <option selected>東京都</option>
+        	<option>京都府</option>
+        	<option>大阪府</option>
+            <option>山形県</option>
+            <option>埼玉県</option>
+         	<option>岩手県</option>
+        	<option>北海道</option>
+        	<option>神奈川県</option>
+        	<option>青森県</option></select></h4></div>
+    	<div class="form-group col-md-2">
+      		<h4><label for="inputZip">Zip Code: </label>
+      		<input type="text" class="form-control" id="inputZip"></h4></div>
+  		</div>
+  		<div class="form-group"><div class="form-check">
+      		<input class="form-check-input" type="checkbox" id="gridCheck">
+      		<label class="form-check-label" for="gridCheck">Remember me</label>
+    	</div></div>
+ 	    <h4><button type="submit" class="btn btn-primary" style="background-color:#87ceeb" >REGISTER NOW</h4></button>
+	</form>
+
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JIN JIN SHOP</title>
+</head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<body style="background-color: #F5FFFA;">
+	<legend> JINJIN SHOPPING </legend>
+	<script>
+		function show() {
+			var date = new Date();
+			var now = "";
+			now = date.getFullYear() + "年";
+			now = now + (date.getMonth() + 1) + "月";
+			now = now + date.getDate() + "日";
+			now = now + date.getHours() + "時";
+			now = now + date.getMinutes() + "分";
+			document.getElementById("nowDiv").innerHTML = now;
+			setTimeout("show()", 1000);
+		}
+	</script>
+<body onload="show()">
+	<div id="nowDiv"></div>
+	<hr />
+
+	<!--商品名-->
+	<!--全部のURL情報を取得はactionから-->
+	<form action="/JINJINProject/ProductController" method="post">
+		<p text- align: left>
+		<ul>
+			<div class="form-group col-md-2">
+				<h4>
+					<label for="ID">商品 ID</label> <span
+						style="color: red; font-size: 15px"> 必要 </span><br> <input
+						type="text" id="id" name="product_id" placeholder="0000">
+				</h4>
+				</p>
+			</div>
+			<p text- align: left>
+			<div>
+				<ul>
+					<h4>
+						<label for="name">商品名</label> <span
+							style="color: red; font-size: 15px"> 必要 </span><br> <input
+							type="text" id="name" name="product_name" placeholder="商品名">
+					</h4>
+				</p>
+			</div>
+
+			<!--価格-->
+			<div class="form-group col-md-2">
+				<h4>
+					<label for="price">価格</label> <span
+						style="color: red; font-size: 15px"> 必要 </span><br> <input
+						type="text" class="form-control" name="product_price"
+						placeholder="000000">
+				</h4>
+			</div>
+
+
+			<!--商品概要-->
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<h4>
+						<label for="information">商品概要</label> <br> <input type="text"
+							class="form-control" id="information" name="information"
+							placeholder="商品概要">
+					</h4>
+				</div>
+
+				<!--モデル選択-->
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<h4>
+							<label for="model">モデル</label> <span
+								style="color: red; font-size: 15px"> 必要 </span> <br> <input
+								type="text" class="form-control" id="model" name="model"
+								placeholder="モデル">
+						</h4>
+					</div>
+
+					<!--カテゴリー選択-->
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<h4>
+								<label for="category">カテゴリー</label><br> <input type="text"
+									class="form-control" id="category" name="category"
+									placeholder="カテゴリー">
+							</h4>
+						</div>
+
+						<!--ブランド選択-->
+						<div class="form-group col-md-4">
+							<h4>
+								<label for="brand">ブランド</label><br> <select id="brand"
+									class="form-control" name="brand">
+									<option selected>Nike</option>
+									<option>Versace</option>
+									<option>adidas</option>
+									<option>CONVERSE</option>
+									<option>ZARA</option>
+									<option>Safeguard</option>
+									<option>SIEMENS</option>
+									<option>Sony</option>
+									<option>Avèn</option>
+								</select>
+							</h4>
+						</div>
+
+						<!--生産地選択-->
+						<div class="form-group col-md-4">
+							<h4>
+								<label for="inputbrand">生産地</label><br> <select
+									id="inputBrand" class="form-control" name="country">
+									<option selected>China</option>
+									<option>America</option>
+									<option>France</option>
+									<option>Japan</option>
+									<option>Italy</option>
+									<option>Canada</option>
+									<option>Germany</option>
+									<option>England</option>
+									<option>India</option>
+									<option>Egypt</option>
+									<option>Austria</option>
+									<option>Spain</option>
+								</select>
+							</h4>
+						</div>
+
+						<!--在庫-->
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<h4>
+									<label for="remain">在庫</label> <span
+										style="color: red; font-size: 15px"> 必要 </span><br> <input
+										type="text" class="form-control" id="remain" name="stockpilenum">
+								</h4>
+							</div>
+
+							<!-- 確認ボタン -->
+							<div class="form-group">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="gridCheck">
+									<label class="form-check-label" for="gridCheck"> 確認</label>
+								</div>
+
+								<h5>
+									<input type="submit" style="background-color: #87ceeb"
+										value="添加">
+								</h5>
+		</ul>
+	</form>
+
+</body>
+</html>
